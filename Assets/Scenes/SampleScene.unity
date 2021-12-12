@@ -131,8 +131,10 @@ GameObject:
   m_Component:
   - component: {fileID: 99146856}
   - component: {fileID: 99146859}
-  - component: {fileID: 99146857}
   - component: {fileID: 99146858}
+  - component: {fileID: 99146861}
+  - component: {fileID: 99146857}
+  - component: {fileID: 99146860}
   m_Layer: 10
   m_Name: Controller
   m_TagString: Untagged
@@ -161,7 +163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99146855}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a4f1b78d62505e49bca7076e080cee5, type: 3}
   m_Name: 
@@ -169,7 +171,7 @@ MonoBehaviour:
   target: {fileID: 2055809795}
   enemyMovePoint: {fileID: 898766670}
   enemy: {fileID: 868196791}
-  moveSpeed: 2
+  moveSpeed: 1
 --- !u!58 &99146858
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -214,6 +216,39 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: 2
+--- !u!114 &99146860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99146855}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32f6f4330b521b4f9b2d1d11fb88698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 6
+  rookMovePoint: {fileID: 898766670}
+  rookTransform: {fileID: 868196791}
+  whatStopAttack:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &99146861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99146855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482617df96743414883257bbfefeb98e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2055809795}
+  rookMovePoint: {fileID: 898766670}
+  rookTransform: {fileID: 868196791}
 --- !u!1 &236300891
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868196790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 3, z: -2}
+  m_LocalPosition: {x: -3, y: 3, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 890667888}
@@ -1561,7 +1596,7 @@ GameObject:
   - component: {fileID: 1008210090}
   m_Layer: 0
   m_Name: Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1792,7 +1827,7 @@ Transform:
   m_Children:
   - {fileID: 1545073778}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508744985
 GameObject:
@@ -2693,13 +2728,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880165072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -2, z: -3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 236300892}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889976962
 GameObject:
@@ -2793,7 +2828,7 @@ GameObject:
   - component: {fileID: 2055809795}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2806,7 +2841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055809794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -4, z: -4}
+  m_LocalPosition: {x: 4, y: 3, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 802821463}

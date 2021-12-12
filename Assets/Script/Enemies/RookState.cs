@@ -2,7 +2,8 @@
 
 public class RookState : MonoBehaviour
 {
-    [SerializeField] static int state;
+    [SerializeField]
+    public static int state;
 
     private const int SEEK = 1;
     private const int ATTACK = 2;
@@ -16,6 +17,8 @@ public class RookState : MonoBehaviour
     public Transform target;
     public Transform rookMovePoint;
     public Transform rookTransform;
+
+    private Vector2 attackDirection;
     
     // Start is called before the first frame update
     private void Start()
@@ -35,6 +38,7 @@ public class RookState : MonoBehaviour
                 break;
             
             case ATTACK:
+                AttackState();
                 break;
             
             case DESTROYED:
@@ -68,13 +72,38 @@ public class RookState : MonoBehaviour
         
         if (Vector2.Distance((Vector2) rookTransform.position, (Vector2) rookMovePoint.position) == 0f)
         {
-
-            if (hitPointLeft.collider.CompareTag("Player") || hitPointUp.collider.CompareTag("Player")
-                || hitPointRight.collider.CompareTag("Player") || hitPointDown.collider.CompareTag("Player"))
+            if (hitPointLeft.collider.CompareTag("Player"))
             {
                 Debug.Log("Detected");
+                attackDirection = Vector2.left;
+                state = ATTACK;
+            }
+            if (hitPointRight.collider.CompareTag("Player"))
+            {
+                Debug.Log("Detected");
+                attackDirection = Vector2.right;
+                state = ATTACK;
+            }
+            if (hitPointUp.collider.CompareTag("Player"))
+            {
+                Debug.Log("Detected");
+                attackDirection = Vector2.up;
+                state = ATTACK;
+            }
+            if (hitPointDown.collider.CompareTag("Player"))
+            {
+                Debug.Log("Detected");
+                attackDirection = Vector2.down;
                 state = ATTACK;
             }
         }
+    }
+    
+    private void AttackState()
+    {
+        _enemyMovement.enabled = false;
+        _rookAttack.enabled = true;
+
+        RookAttack.attackDirection = this.attackDirection;
     }
 }
