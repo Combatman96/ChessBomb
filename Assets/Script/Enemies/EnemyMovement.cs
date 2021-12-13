@@ -80,7 +80,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Move()
     {
-        
         var direction =  path.vectorPath[currentWaypoint];
         enemy.position = Vector3.MoveTowards(enemy.position, enemyMovePoint.position, moveSpeed * Time.deltaTime);
         //rb.MovePosition((Vector2)enemyMovePoint.position * Time.deltaTime);

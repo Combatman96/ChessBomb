@@ -7,9 +7,8 @@ public class PlayerInput : MonoBehaviour
     
     [Header("Transform")]
     public Transform movePoint;
-
-    public GameObject obstacle;
     
+
     // Update is called once per frame
     void Update()
     {
@@ -30,13 +29,6 @@ public class PlayerInput : MonoBehaviour
         if ( Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
         {
             movement.MoveVertical(Input.GetAxisRaw("Vertical"));
-        }
-        
-        //Set the Bomb (Testing at the moment)
-        if (Input.GetButtonUp("Jump"))
-        {
-            Instantiate(obstacle, transform.TransformPoint(0f, 0f, -3f), Quaternion.Euler(0,0,0));
-            AstarPath.active.Scan(); //Rescan the navigation grid
         }
     }
 }
