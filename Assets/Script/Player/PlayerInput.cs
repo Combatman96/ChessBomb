@@ -7,9 +7,8 @@ public class PlayerInput : MonoBehaviour
     
     [Header("Transform")]
     public Transform movePoint;
-
-    public GameObject obstacle;
     
+
     // Update is called once per frame
     void Update()
     {
