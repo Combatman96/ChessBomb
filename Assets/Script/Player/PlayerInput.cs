@@ -31,12 +31,5 @@ public class PlayerInput : MonoBehaviour
         {
             movement.MoveVertical(Input.GetAxisRaw("Vertical"));
         }
-        
-        //Set the Bomb (Testing at the moment)
-        if (Input.GetButtonUp("Jump"))
-        {
-            Instantiate(obstacle, transform.TransformPoint(0f, 0f, -3f), Quaternion.Euler(0,0,0));
-            AstarPath.active.Scan(); //Rescan the navigation grid
-        }
     }
 }
