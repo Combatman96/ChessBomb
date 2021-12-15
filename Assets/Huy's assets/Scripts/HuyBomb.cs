@@ -12,7 +12,7 @@ public class HuyBomb : MonoBehaviour
     public int bombId; // (1) Knight, (2) Rook, (3) Bishop, (4) King, (5) Queen
     public float timeCountdown;
     public int damage = 1;
-    private bool timeIsRunning = false;
+    public bool timeIsRunning = false;
     private float modelX;
     private float modelY;
 
@@ -49,7 +49,8 @@ public class HuyBomb : MonoBehaviour
             y >= HuyVariable.START_BOARD_Y
             )
         {
-            GameObject obj = Instantiate(explodeModel, new Vector3(x, y, -1), Quaternion.identity);
+            GameObject obj = Instantiate(explodeModel, new Vector3(x, y, -1), Quaternion.identity); // !important
+            explodeModel.GetComponent<ExplodeArea>().damage = this.damage; // Ke thua damage cho moi vung no
         }
     }
     private void CreateExplodeAreaLoop(float x, float y, float directionX, float directionY)
@@ -75,46 +76,46 @@ public class HuyBomb : MonoBehaviour
         switch (id)
         {
             case 1: // Knight
-                CreateExplodeArea(modelX + 1, modelY - 2);
-                CreateExplodeArea(modelX - 1, modelY - 2);
-                CreateExplodeArea(modelX - 1, modelY + 2);
-                CreateExplodeArea(modelX + 1, modelY + 2);
-                CreateExplodeArea(modelX + 2, modelY - 1);
-                CreateExplodeArea(modelX - 2, modelY - 1);
-                CreateExplodeArea(modelX - 2, modelY + 1);
-                CreateExplodeArea(modelX + 2, modelY + 1);
+                CreateExplodeArea(modelX + HuyVariable.COORD_LENGTH, modelY - 2 * HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX - HuyVariable.COORD_LENGTH, modelY - 2 * HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX - HuyVariable.COORD_LENGTH, modelY + 2 * HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX + HuyVariable.COORD_LENGTH, modelY + 2 * HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX + 2 * HuyVariable.COORD_LENGTH, modelY - HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX - 2 * HuyVariable.COORD_LENGTH, modelY - HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX - 2 * HuyVariable.COORD_LENGTH, modelY + HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX + 2 * HuyVariable.COORD_LENGTH, modelY + HuyVariable.COORD_LENGTH);
                 break;
             case 2: // Rook
-                CreateExplodeAreaLoop(modelX, modelY, -1, 0); // Tu phai sang trai
-                CreateExplodeAreaLoop(modelX, modelY, 1, 0); // Tu trai sang phai
-                CreateExplodeAreaLoop(modelX, modelY, 0, -1); // Tu duoi len tren
-                CreateExplodeAreaLoop(modelX, modelY, 0, 1); // Tu tren xuong duoi
+                CreateExplodeAreaLoop(modelX, modelY, -HuyVariable.COORD_LENGTH, 0); // Tu phai sang trai
+                CreateExplodeAreaLoop(modelX, modelY, HuyVariable.COORD_LENGTH, 0); // Tu trai sang phai
+                CreateExplodeAreaLoop(modelX, modelY, 0, HuyVariable.COORD_LENGTH); // Tu duoi len tren
+                CreateExplodeAreaLoop(modelX, modelY, 0, -HuyVariable.COORD_LENGTH); // Tu tren xuong duoi
                 break;
             case 3: // Bishop
-                CreateExplodeAreaLoop(modelX, modelY, -1, -1); // Tu phai sang trai, tu duoi len tren
-                CreateExplodeAreaLoop(modelX, modelY, 1, -1); // Tu trai sang phai, tu duoi len tren
-                CreateExplodeAreaLoop(modelX, modelY, 1, 1); // Tu trai sang phai, tu tren xuong duoi
-                CreateExplodeAreaLoop(modelX, modelY, -1, 1); // Tu trai sang phai, tu tren xuong duoi
+                CreateExplodeAreaLoop(modelX, modelY, -HuyVariable.COORD_LENGTH, HuyVariable.COORD_LENGTH); // Tu phai sang trai, tu duoi len tren
+                CreateExplodeAreaLoop(modelX, modelY, HuyVariable.COORD_LENGTH, HuyVariable.COORD_LENGTH); // Tu trai sang phai, tu duoi len tren
+                CreateExplodeAreaLoop(modelX, modelY, HuyVariable.COORD_LENGTH, -HuyVariable.COORD_LENGTH); // Tu trai sang phai, tu tren xuong duoi
+                CreateExplodeAreaLoop(modelX, modelY, -HuyVariable.COORD_LENGTH, -HuyVariable.COORD_LENGTH); // Tu trai sang phai, tu tren xuong duoi
                 break;
             case 4: // Queen
-                CreateExplodeAreaLoop(modelX, modelY, -1, -1); // Tu phai sang trai, tu duoi len tren
-                CreateExplodeAreaLoop(modelX, modelY, 1, -1); // Tu trai sang phai, tu duoi len tren
-                CreateExplodeAreaLoop(modelX, modelY, 1, 1); // Tu trai sang phai, tu tren xuong duoi
-                CreateExplodeAreaLoop(modelX, modelY, -1, 1); // Tu trai sang phai, tu tren xuong duoi
-                CreateExplodeAreaLoop(modelX, modelY, -1, 0); // Tu phai sang trai
-                CreateExplodeAreaLoop(modelX, modelY, 1, 0); // Tu trai sang phai
-                CreateExplodeAreaLoop(modelX, modelY, 0, -1); // Tu duoi len tren
-                CreateExplodeAreaLoop(modelX, modelY, 0, 1); // Tu tren xuong duoi
+                CreateExplodeAreaLoop(modelX, modelY, -HuyVariable.COORD_LENGTH, HuyVariable.COORD_LENGTH); // Tu phai sang trai, tu duoi len tren
+                CreateExplodeAreaLoop(modelX, modelY, HuyVariable.COORD_LENGTH, HuyVariable.COORD_LENGTH); // Tu trai sang phai, tu duoi len tren
+                CreateExplodeAreaLoop(modelX, modelY, HuyVariable.COORD_LENGTH, -HuyVariable.COORD_LENGTH); // Tu trai sang phai, tu tren xuong duoi
+                CreateExplodeAreaLoop(modelX, modelY, -HuyVariable.COORD_LENGTH, -HuyVariable.COORD_LENGTH); // Tu trai sang phai, tu tren xuong duoi
+                CreateExplodeAreaLoop(modelX, modelY, -HuyVariable.COORD_LENGTH, 0); // Tu phai sang trai
+                CreateExplodeAreaLoop(modelX, modelY, HuyVariable.COORD_LENGTH, 0); // Tu trai sang phai
+                CreateExplodeAreaLoop(modelX, modelY, 0, HuyVariable.COORD_LENGTH); // Tu duoi len tren
+                CreateExplodeAreaLoop(modelX, modelY, 0, -HuyVariable.COORD_LENGTH); // Tu tren xuong duoi
                 break;
             default: // King : 5
-                CreateExplodeArea(modelX, modelY - 1);
-                CreateExplodeArea(modelX + 1, modelY - 1);
-                CreateExplodeArea(modelX + 1, modelY);
-                CreateExplodeArea(modelX + 1, modelY + 1);
-                CreateExplodeArea(modelX, modelY + 1);
-                CreateExplodeArea(modelX - 1, modelY + 1);
-                CreateExplodeArea(modelX - 1, modelY);
-                CreateExplodeArea(modelX - 1, modelY - 1);
+                CreateExplodeArea(modelX, modelY - HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX + HuyVariable.COORD_LENGTH, modelY - HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX + HuyVariable.COORD_LENGTH, modelY);
+                CreateExplodeArea(modelX + HuyVariable.COORD_LENGTH, modelY + HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX, modelY + HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX - HuyVariable.COORD_LENGTH, modelY + HuyVariable.COORD_LENGTH);
+                CreateExplodeArea(modelX - HuyVariable.COORD_LENGTH, modelY);
+                CreateExplodeArea(modelX - HuyVariable.COORD_LENGTH, modelY - HuyVariable.COORD_LENGTH);
                 break;
         }
     }
