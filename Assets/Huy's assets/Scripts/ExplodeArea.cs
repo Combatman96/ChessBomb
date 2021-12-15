@@ -31,4 +31,9 @@ public class ExplodeArea : MonoBehaviour
                 animationTime -= Time.deltaTime;
         }
     }
+
+    public void setDamage(int damage)
+    {
+        this.damage = damage;
+    }
 }

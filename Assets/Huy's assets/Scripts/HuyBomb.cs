@@ -50,7 +50,8 @@ public class HuyBomb : MonoBehaviour
             )
         {
             GameObject obj = Instantiate(explodeModel, new Vector3(x, y, -1), Quaternion.identity); // !important
-            explodeModel.GetComponent<ExplodeArea>().damage = this.damage; // Ke thua damage cho moi vung no
+            ExplodeArea ea = explodeModel.GetComponentInChildren<ExplodeArea>(false);
+            ea.setDamage(this.damage); // Ke thua damage cho moi vung no
         }
     }
     private void CreateExplodeAreaLoop(float x, float y, float directionX, float directionY)
