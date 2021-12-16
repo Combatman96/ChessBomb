@@ -9,8 +9,6 @@ public class GridMovement : MonoBehaviour
     
     [Header("LayerMask")] public LayerMask whatStopMovement;
 
-    [Header("Component")] public Rigidbody2D rb;
-    
     // Start is called before the first frame update
     void Start()
     {

@@ -154,7 +154,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8029444580926689944}
   - component: {fileID: 8029444580926689945}
-  m_Layer: 0
+  - component: {fileID: 3540886379341261150}
+  m_Layer: 17
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,5 +192,21 @@ MonoBehaviour:
   explodeModel: {fileID: 4747166901362483078, guid: 5b2fdb49995834748bb6f651410049bd,
     type: 3}
   bombId: 2
-  timeCountdown: 0.8
+  timeCountdown: 3
   damage: 1
+--- !u!58 &3540886379341261150
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029444580926689947}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
