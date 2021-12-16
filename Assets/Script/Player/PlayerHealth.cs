@@ -2,14 +2,20 @@
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health;
+    public static int health;
+    public int maxHealth = 3;
 
-    public int getHealth()
+    private void Start()
+    {
+        health = maxHealth;
+    }
+
+    public int GetHealth()
     {
         return health;
     }
 
-    public void degreeHealth()
+    public void TakeDamage()
     {
         health--;
     }
