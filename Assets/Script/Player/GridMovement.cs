@@ -8,6 +8,8 @@ public class GridMovement : MonoBehaviour
     public Transform playerTransform;
     
     [Header("LayerMask")] public LayerMask whatStopMovement;
+
+    [Header("Component")] public Rigidbody2D rb;
     
     // Start is called before the first frame update
     void Start()
@@ -16,11 +18,14 @@ public class GridMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Move player toward movePoint
         playerTransform.position =
-            Vector3.MoveTowards(playerTransform.position, movePoint.position, moveSpeed * Time.deltaTime);
+           Vector3.MoveTowards(playerTransform.position, movePoint.position, moveSpeed * Time.deltaTime);
+      
+        //rb.MovePosition((Vector2)playerTransform.position + ((Vector2)movePoint.position * Time.deltaTime ));
+        //Debug.Log(movePoint.position);
     }
 
     public void MoveHorizontal(float x)

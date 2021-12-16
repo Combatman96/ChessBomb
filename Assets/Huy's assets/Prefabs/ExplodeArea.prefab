@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4747166900776603028}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4747166901362483073}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ExplodeArea
   m_TagString: Explode
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4747166901580575964}
   - component: {fileID: 4747166901580575967}
   - component: {fileID: 51117771}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Controller
   m_TagString: Explode
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4747166901580575965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4747166901362483073}
@@ -134,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.34, y: 0.32}
   m_EdgeRadius: 0
 --- !u!1 &4747166901874104083
 GameObject:
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4747166901874104082}
   - component: {fileID: 4747166901874104109}
   - component: {fileID: 4747166901874104108}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
