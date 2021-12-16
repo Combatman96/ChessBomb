@@ -47,18 +47,21 @@ public class HuyBomb : MonoBehaviour
             x >= HuyVariable.START_BOARD_X &&
             y <= HuyVariable.END_BOARD_Y &&
             y >= HuyVariable.START_BOARD_Y
-            )
+        )
         {
-            GameObject obj = Instantiate(explodeModel, new Vector3(x, y, -1), Quaternion.identity); // !important
             ExplodeArea ea = explodeModel.GetComponentInChildren<ExplodeArea>(false);
             ea.setDamage(this.damage); // Ke thua damage cho moi vung no
+            GameObject obj = Instantiate(explodeModel, new Vector3(x, y, -1), Quaternion.identity); // !important
         }
     }
+
     private void CreateExplodeAreaLoop(float x, float y, float directionX, float directionY)
     {
         CreateExplodeArea(x + directionX, y + directionY);
         if (!Is_ObstacleOnWay(x + directionX, y + directionY) && !(directionX == 0f && directionY == 0f))
+        {
             CreateExplodeAreaLoop(x + directionX, y + directionY, directionX, directionY);
+        }
     }
 
     private bool Is_ObstacleOnWay(float x, float y)
@@ -67,7 +70,20 @@ public class HuyBomb : MonoBehaviour
             return true;
         if (y < HuyVariable.START_BOARD_Y || y > HuyVariable.END_BOARD_Y)
             return true;
-        // Hien chua co cai gi de check obstacle tren duong, chi moi check xem da cham bien hay chua
+        try
+        {
+            GameObject[] test = GameObject.FindGameObjectsWithTag("Obstacle"); // Tim tat ca cac obstacle
+            int i = 0;
+            while (test[i] != null)
+            {
+                if (test[i].transform.position.x == x && test[i].transform.position.y == y) // Check moi toa do cua obstacle
+                {
+                    return true;
+                }
+                i++;
+            }
+        } catch { }
+
         return false;
     }
 

@@ -10,10 +10,8 @@ public class ExplodeArea : MonoBehaviour
 
     [Header("Properties")]
     public float animationTime = 2f;
-    private bool animationIsRunning = false;
     public int damage; // Damage will be inherited from bomb type
-
-    //Location on the board
+    private bool animationIsRunning = false;
 
     void Start()
     {
@@ -36,4 +34,10 @@ public class ExplodeArea : MonoBehaviour
     {
         this.damage = damage;
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("ExplodeArea collided with " + col.gameObject.tag + " detected");
+    }
+
 }
