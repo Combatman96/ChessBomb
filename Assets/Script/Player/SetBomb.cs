@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class SetBomb : MonoBehaviour
@@ -11,9 +12,13 @@ public class SetBomb : MonoBehaviour
     public Image queenImg;
 
     [Header("Components")] public Bombs bombs;
-    
-    
-    public void InitBomb()
+
+    private void Start()
+    {
+        ShowBomb();
+    }
+
+    public void ShowBomb()
     {
         switch (Bombs.NextBomb)
         {
@@ -53,7 +58,12 @@ public class SetBomb : MonoBehaviour
                 queenImg.enabled = true;
                 break;
         }
-        
+
+    }
+
+    public void InitBomb()
+    {
         bombs.GetBomb();
+        ShowBomb();
     }
 }

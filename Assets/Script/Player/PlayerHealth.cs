@@ -5,8 +5,9 @@ public class PlayerHealth : MonoBehaviour
     public static int health;
     public int maxHealth = 3;
 
-    [Header("Controller")] public LevelController levelController;
-
+    [Header("Controller")] 
+    public LevelController levelController;
+    public AnimationStates animationStates;
     private void Start()
     {
         health = maxHealth;
@@ -22,7 +23,8 @@ public class PlayerHealth : MonoBehaviour
         health--;
         if (health == 0)
         {
-            levelController.GameOver();
+            animationStates.Defeated();//Play the defeated animation
+            levelController.GameOver();//Display GAME OVER message
         }
     }
 }

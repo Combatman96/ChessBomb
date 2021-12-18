@@ -50,6 +50,7 @@ MonoBehaviour:
   bombId: 1
   timeCountdown: 2.2
   damage: 1
+  timeIsRunning: 0
 --- !u!58 &3467768492650372179
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.4
 --- !u!1 &3428440014562912990
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3428440014562912961}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3428440014708439594}
   - component: {fileID: 3428440014708439597}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +167,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5b43ba0bd7830194c9d0b5fe4dba1389, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -187,7 +188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3428440014763846791}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: BOMB_01_KNIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}

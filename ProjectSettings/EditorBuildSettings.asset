@@ -11,4 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AdventureLevelSelector.unity
     guid: 9f5035d56745701439a9f6540a16ed2a
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 229a31af387d1294d962b95e2c8ceb5a
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: fc68b1f365826d547994973e3a066b21
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: eb7bc6de04b1a354dbc1110d36b06efc
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: df41bac34062a724a98285b9167eade4
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: 905b4aad7ac200040bd8aeef4c4fc7c8
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: ef846bc7b14a3a147b75f898bd319e9a
   m_configObjects: {}

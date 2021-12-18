@@ -3,9 +3,12 @@
 public class AnimationStates : MonoBehaviour
 {
     [Header("Transform")] public Transform movePoint;
-    [Header("Components")] public Animator animator;
-    [Header("Components")] public SpriteRenderer playerSprite;
-  
+    [Header("Components")] 
+    public Animator animator;
+    public SpriteRenderer playerSprite;
+    public new Collider2D collider;
+
+    [Header("Views")] public PlayerInput playerInput;
     // Update is called once per frame
     void Update()
     {
@@ -26,5 +29,12 @@ public class AnimationStates : MonoBehaviour
         {
             animator.SetBool("IsMoving", true);
         }
+    }
+
+    public void Defeated()
+    {
+        collider.enabled = false;
+        animator.SetBool("IsDefeated", true);
+        playerInput.enabled = false;
     }
 }
