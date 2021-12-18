@@ -12,8 +12,8 @@ public class SetBomb : MonoBehaviour
 
     [Header("Components")] public Bombs bombs;
     
-    // Update is called once per frame
-    void Update()
+    
+    public void InitBomb()
     {
         switch (Bombs.NextBomb)
         {
@@ -53,9 +53,7 @@ public class SetBomb : MonoBehaviour
                 queenImg.enabled = true;
                 break;
         }
-        if (Input.GetButtonUp("Jump"))
-        {
-            bombs.GetBomb();
-        }
+        
+        bombs.GetBomb();
     }
 }
