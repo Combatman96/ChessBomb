@@ -3653,6 +3653,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2055809795}
+    - target: {fileID: 7991295482974368638, guid: 3edef8b0f4e35e847ac0b3f88749b241,
+        type: 3}
+      propertyPath: whatStopAttack.m_Bits
+      value: 131328
+      objectReference: {fileID: 0}
     - target: {fileID: 7991295482974368639, guid: 3edef8b0f4e35e847ac0b3f88749b241,
         type: 3}
       propertyPath: target
