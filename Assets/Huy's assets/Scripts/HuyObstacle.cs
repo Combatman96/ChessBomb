@@ -9,6 +9,7 @@ public class HuyObstacle : MonoBehaviour
 
     [Header("Properties")]
     public int health = 1;
+    public bool is_indestructible = false;
 
     //Some functions will need reference to the controller
     //public GameObject controller;
@@ -37,7 +38,7 @@ public class HuyObstacle : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("HuyObstacle collided with " + col.gameObject.tag + " detected");
-        if (col.gameObject.tag == "Explode")
+        if (col.gameObject.tag == "Explode" && !is_indestructible)
         {
             this.health -= 1;
         }
