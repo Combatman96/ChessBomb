@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     
     private Path path;
     private int currentWaypoint = 0;
-    private bool _reachedEndOfPath = false;
+    //private bool _reachedEndOfPath = false;
 
     private Seeker seeker;
     
@@ -64,12 +64,12 @@ public class EnemyMovement : MonoBehaviour
         //Are we at the end of path?
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            _reachedEndOfPath = true;
+            //_reachedEndOfPath = true;
             return;
         }
         else
         {
-            _reachedEndOfPath = false;
+            //_reachedEndOfPath = false;
         }
         
         //OK Move

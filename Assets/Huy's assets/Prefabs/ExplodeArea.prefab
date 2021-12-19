@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4747166900776603028}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4747166901362483073}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ExplodeArea
   m_TagString: Explode
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4747166901362483078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4747166900776603028}
@@ -73,8 +73,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4747166901580575964}
   - component: {fileID: 4747166901580575967}
-  - component: {fileID: 51117771}
-  m_Layer: 0
+  - component: {fileID: 3744997384625637331}
+  m_Layer: 16
   m_Name: Controller
   m_TagString: Explode
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4747166901580575965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4747166901362483073}
@@ -110,8 +110,8 @@ MonoBehaviour:
   model: {fileID: 4747166901362483078}
   animationTime: 1
   damage: 1
---- !u!61 &51117771
-BoxCollider2D:
+--- !u!58 &3744997384625637331
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,18 +124,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
-  m_EdgeRadius: 0
+  m_Radius: 0.14
 --- !u!1 &4747166901874104083
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +137,7 @@ GameObject:
   - component: {fileID: 4747166901874104082}
   - component: {fileID: 4747166901874104109}
   - component: {fileID: 4747166901874104108}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +196,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -6474883903819434044, guid: 7d0df33420cb8844cab5330a78e216f3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

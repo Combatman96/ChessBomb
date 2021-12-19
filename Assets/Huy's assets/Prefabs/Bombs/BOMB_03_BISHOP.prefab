@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7358989941235798562}
   - component: {fileID: 7358989941235798563}
-  m_Layer: 0
+  - component: {fileID: 8933184001362768008}
+  m_Layer: 17
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,8 +48,25 @@ MonoBehaviour:
   explodeModel: {fileID: 4747166901362483078, guid: 5b2fdb49995834748bb6f651410049bd,
     type: 3}
   bombId: 3
-  timeCountdown: 0.4
+  timeCountdown: 3.2
   damage: 1
+  timeIsRunning: 0
+--- !u!58 &8933184001362768008
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358989941235798561}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &7358989941416911054
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7358989941416911055}
   - component: {fileID: 7358989941416911048}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +136,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: de869c83d8e09564c9d6136f202c042d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -139,7 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7358989941420226146}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: BOMB_03_BISHOP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7358989941495066660}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4041974022535789206}
   - component: {fileID: 4041974022535789207}
-  m_Layer: 0
+  - component: {fileID: 7568260443725506855}
+  m_Layer: 17
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,8 +48,25 @@ MonoBehaviour:
   explodeModel: {fileID: 4747166901362483078, guid: 5b2fdb49995834748bb6f651410049bd,
     type: 3}
   bombId: 5
-  timeCountdown: 1
+  timeCountdown: 2.4
   damage: 1
+  timeIsRunning: 0
+--- !u!58 &7568260443725506855
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4041974022535789205}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &4041974022619274965
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4041974022619274966}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: BOMB_05_KING
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4041974022697748603}
   - component: {fileID: 4041974022697748604}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1e550480e134e024da5c2cc13e864c47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -171,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4041974022826498192}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
