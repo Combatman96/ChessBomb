@@ -1,9 +1,9 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SetBomb : MonoBehaviour
+public class PlayerTwoSetBomb : MonoBehaviour
 {
     [Header("Images")]
     public Image rookImg;
@@ -12,10 +12,10 @@ public class SetBomb : MonoBehaviour
     public Image kingImg;
     public Image queenImg;
 
-    [Header("Components")] public Bombs bombs;
+    [Header("Model")] public PlayerTwoBombs bombs;
 
     private bool callOne = false;
-    
+
     private void ShowBomb()
     {
         switch (bombs.GetNextBomb())
@@ -56,6 +56,7 @@ public class SetBomb : MonoBehaviour
                 queenImg.enabled = true;
                 break;
         }
+
     }
 
     public void InitBomb()
@@ -63,7 +64,7 @@ public class SetBomb : MonoBehaviour
         bombs.GetBomb();
         ShowBomb();
     }
-
+    
     public void Update()
     {
         if (!callOne)

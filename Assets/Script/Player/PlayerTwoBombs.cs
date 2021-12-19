@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Bombs : MonoBehaviour
+public class PlayerTwoBombs : MonoBehaviour
 {
     private int _nextBomb;
     //There are 5 types of bomb: (1) Knight, (2) Rook, (3) Bishop, (4) King, (5) Queen
@@ -39,9 +41,6 @@ public class Bombs : MonoBehaviour
                 break;
         }
         Instantiate(_bomb, transform.TransformPoint(0f, 0f, -3f), Quaternion.Euler(0f,0f,0f));
-        if(AstarPath.active != null)
-            AstarPath.active.Scan(); //Rescan the navigation grid
-
         _nextBomb = RandomBomb();
     }
 
@@ -50,7 +49,7 @@ public class Bombs : MonoBehaviour
         int randomNumber = Random.Range(1, 6);
         return randomNumber;
     }
-
+    
     public int GetNextBomb()
     {
         return _nextBomb;

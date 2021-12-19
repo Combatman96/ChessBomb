@@ -4,34 +4,56 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
+    public bool multiplayer = false;
+    
     [Header("End Level Display")] 
     public GameObject endLevelDisplay;
     public TextMeshProUGUI endMessage;
 
     [Header("Level To Unlock After Won")] public int nextLevel;
+
     [Header("Model")] public LevelUnlockedData levelUnlockedData;
-    
+    public PlayerHealth player1Health;
+    public PlayerHealth player2Health;
     
     public void GameOver()
     {
         //Display the GAME OVER and reload the level 
         Debug.Log("GAME OVER");
         endLevelDisplay.SetActive(true);
-        endMessage.SetText("YOU LOSE");
-        
+        if (!multiplayer)
+        {
+            endMessage.SetText("YOU LOSE");
+        }
+        else
+        {
+            if (player1Health.GetHealth() > player2Health.GetHealth())
+            {
+                endMessage.SetText("PLAYER 1 WINS");
+            }
+            else
+            {
+                endMessage.SetText("PLAYER 2 WINS");
+            }
+        }
         //Reload the level after ...
         Invoke(nameof(ReloadThisScene), 2.3f);
     }
 
     public void GameWin()
     {
-        //Display the YOU WIN and return to the map, also unlock next level
-        Debug.Log("You Win");
         endLevelDisplay.SetActive(true);
-        endMessage.SetText("YOU WIN");
         
-        //Unlock next level
-        levelUnlockedData.UnlockLevel(nextLevel);
+        if (!multiplayer)
+        {
+            //Display the YOU WIN and return to the map, also unlock next level
+            Debug.Log("You Win");
+            endMessage.SetText("YOU WIN");
+
+            //Unlock next level
+            levelUnlockedData.UnlockLevel(nextLevel);
+        }
+
 
         //back to the scene LEVEL SELECT after ... 
         Invoke(nameof(BackToLevelSelect), 2.3f);
@@ -51,7 +73,14 @@ public class LevelController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            BackToLevelSelect();
+            if (!multiplayer)
+            {
+                BackToLevelSelect();
+            }
+            else
+            {
+                SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
+            }
         }
     }
     

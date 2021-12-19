@@ -9,13 +9,14 @@ public class MainMenuButtonClick : MonoBehaviour
         {
             case 1:
                 //Load the Level Select Scene for SinglePlayer
-                //SceneManager.LoadScene()
+                SceneManager.LoadScene("AdventureLevelSelector", LoadSceneMode.Single);
                 break;
             case 2:
                 //Load the Level Select Scene for Puzzel
                 break;
             case 3:
                 //Load the Multiplayer Scene
+                SceneManager.LoadScene("Multiplayer", LoadSceneMode.Single);
                 break;
             case 4:
                 //Exit Game

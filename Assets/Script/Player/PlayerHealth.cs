@@ -2,7 +2,7 @@
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static int health;
+    private int health;
     public int maxHealth = 3;
 
     [Header("Controller")] 
