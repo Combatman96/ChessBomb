@@ -55,6 +55,24 @@ public class HuyBomb : MonoBehaviour
         }
     }
 
+    public void CreateExplodeAreaWithSound(float x, float y)
+    {
+        if (
+            x <= HuyVariable.END_BOARD_X &&
+            x >= HuyVariable.START_BOARD_X &&
+            y <= HuyVariable.END_BOARD_Y &&
+            y >= HuyVariable.START_BOARD_Y
+        )
+        {
+            ExplodeArea ea = explodeModel.GetComponentInChildren<ExplodeArea>(false);
+            ea.setDamage(this.damage); // Ke thua damage cho moi vung no
+            AudioSource audioData = explodeModel.GetComponentInChildren<AudioSource>(false);
+            audioData.playOnAwake = true;
+            Debug.Log("started");
+            GameObject obj = Instantiate(explodeModel, new Vector3(x, y, -1), Quaternion.identity); // !important
+        }
+    }
+
     private void CreateExplodeAreaLoop(float x, float y, float directionX, float directionY)
     {
         CreateExplodeArea(x + directionX, y + directionY);
@@ -89,7 +107,7 @@ public class HuyBomb : MonoBehaviour
 
     public void CreateExplode(int id)
     {
-        CreateExplodeArea(modelX, modelY);
+        CreateExplodeAreaWithSound(modelX, modelY);
         switch (id)
         {
             case 1: // Knight
