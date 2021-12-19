@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SetBomb : MonoBehaviour
@@ -11,11 +13,12 @@ public class SetBomb : MonoBehaviour
     public Image queenImg;
 
     [Header("Components")] public Bombs bombs;
+
+    private bool callOne = false;
     
-    // Update is called once per frame
-    void Update()
+    private void ShowBomb()
     {
-        switch (Bombs.NextBomb)
+        switch (bombs.GetNextBomb())
         {
             case 1:
                 knightImg.enabled = true;
@@ -53,9 +56,24 @@ public class SetBomb : MonoBehaviour
                 queenImg.enabled = true;
                 break;
         }
-        if (Input.GetButtonUp("Jump"))
+    }
+
+    public void InitBomb()
+    {
+        bombs.GetBomb();
+        ShowBomb();
+    }
+
+    public void Update()
+    {
+        if (!callOne)
         {
-            bombs.GetBomb();
+            ShowBomb();
+            callOne = true;
+        }
+        else
+        {
+            return;
         }
     }
 }

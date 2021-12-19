@@ -17,7 +17,7 @@ public class RookAttack : MonoBehaviour
     {
         //Move to Attack Now
         rookTransform.position = Vector3.MoveTowards(rookTransform.position, rookMovePoint.position, attackSpeed* Time.deltaTime);
-        if(!Physics2D.OverlapCircle((Vector2)rookMovePoint.position + attackDirection, 0.2f,  whatStopAttack))
+        if(!Physics2D.OverlapCircle((Vector2)rookMovePoint.position + attackDirection, 0.4f,  whatStopAttack))
         {
             rookMovePoint.position += (Vector3)attackDirection;
         }
