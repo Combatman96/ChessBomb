@@ -601,6 +601,75 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 4
   m_TargetDisplay: 0
+--- !u!1001 &562368218
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1292209299880026854, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_Name
+      value: MUSIC_GameOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.56067413
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.021305263
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.622826
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819111316432350836, guid: dbd7a8a93590aa34d9b2a33d8f799cb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbd7a8a93590aa34d9b2a33d8f799cb7, type: 3}
 --- !u!1 &591171590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,10 +2551,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b868de48474eb34aa557215e0a6a025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplayer: 0
   endLevelDisplay: {fileID: 531715547}
   endMessage: {fileID: 2082813709}
   nextLevel: 5
   levelUnlockedData: {fileID: 331768823}
+  player1Health: {fileID: 0}
+  player2Health: {fileID: 0}
 --- !u!1 &1525855508
 GameObject:
   m_ObjectHideFlags: 0
