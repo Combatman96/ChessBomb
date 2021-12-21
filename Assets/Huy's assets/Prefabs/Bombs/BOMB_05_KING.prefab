@@ -49,7 +49,7 @@ MonoBehaviour:
   explodeModel: {fileID: 4747166901362483078, guid: 5b2fdb49995834748bb6f651410049bd,
     type: 3}
   bombId: 5
-  timeCountdown: 2.4
+  timeCountdown: 0.78
   damage: 1
   timeIsRunning: 0
 --- !u!58 &7568260443725506855

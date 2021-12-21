@@ -2762,6 +2762,9 @@ MonoBehaviour:
   movePoint: {fileID: 1508744986}
   animator: {fileID: 408337484}
   playerSprite: {fileID: 408337483}
+  collider: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerTwoInput: {fileID: 0}
 --- !u!58 &1008210094
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3472,10 +3475,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b868de48474eb34aa557215e0a6a025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplayer: 0
   endLevelDisplay: {fileID: 531715547}
   endMessage: {fileID: 2082813709}
   nextLevel: 0
   levelUnlockedData: {fileID: 331768823}
+  player1Health: {fileID: 0}
+  player2Health: {fileID: 0}
 --- !u!1 &1508744985
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,6 +4468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   levelController: {fileID: 1490827672}
+  animationStates: {fileID: 0}
 --- !u!1 &1833077427
 GameObject:
   m_ObjectHideFlags: 0

@@ -203,7 +203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8e60bf0644a1ada43aa4974ab0dd4744, type: 3}
   m_Color: {r: 0.3584906, g: 0.3534176, b: 0.3534176, a: 0.7647059}
   m_FlipX: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyMovePoint: {fileID: 8481489059207164904}
   enemy: {fileID: 8481489058208557938}
-  moveSpeed: 3.2
+  moveSpeed: 3.1
 --- !u!114 &8481489059120752688
 MonoBehaviour:
   m_ObjectHideFlags: 0
