@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 4747166901362483078}
-  animationTime: 1
+  animationTime: 0.5
   damage: 1
 --- !u!58 &3744997384625637331
 CircleCollider2D:
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2

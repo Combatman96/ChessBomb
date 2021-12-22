@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'back - ESC            MOVEMENTS - W A S D          SETBOMB - R '
+  m_text: back - ESC      Movement - W A S D      Set Bomb - R
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3d287d50ff0b854c88d08c37fe4a931, type: 2}
   m_sharedMaterial: {fileID: 688306519816321850, guid: d3d287d50ff0b854c88d08c37fe4a931,
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -167,10 +167,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 421.50003}
-  m_SizeDelta: {x: 0, y: -1017.32477}
+  m_AnchoredPosition: {x: 0, y: -15}
+  m_SizeDelta: {x: 0, y: -78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5386966561681094132
 CanvasRenderer:
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.59607846}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
