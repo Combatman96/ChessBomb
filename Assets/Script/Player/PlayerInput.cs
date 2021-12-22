@@ -4,15 +4,16 @@ public class PlayerInput : MonoBehaviour
 {
     [Header("Controller")] 
     public GridMovement movement;
+    public SetBomb setBomb;
     
     [Header("Transform")]
     public Transform movePoint;
     
-
+    
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.TransformPoint(0f, 0f ,0f), movePoint.position) <= 0.1f)
+        if (Vector3.Distance(transform.TransformPoint(0f, 0f ,0f), movePoint.position) == 0f)
         {
             CheckInput();
         }
@@ -29,6 +30,11 @@ public class PlayerInput : MonoBehaviour
         if ( Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
         {
             movement.MoveVertical(Input.GetAxisRaw("Vertical"));
+        }
+        
+        if (Input.GetButtonUp("Jump"))
+        {
+            setBomb.InitBomb();
         }
     }
 }

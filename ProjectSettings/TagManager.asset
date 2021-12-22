@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Explode
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - Enemy5
   - Enemy6
   - 
-  - 
-  - 
-  - 
+  - Explosion
+  - Bomb
+  - Player
   - 
   - 
   - 

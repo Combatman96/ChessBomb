@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class RookState : MonoBehaviour
 {
@@ -8,23 +9,30 @@ public class RookState : MonoBehaviour
     private const int SEEK = 1;
     private const int ATTACK = 2;
     private const int DESTROYED = 3;
+
+    [Header("Game Object")] public GameObject rook;
+    [Header("Model")] public LevelData levelData;
+    [Header("Components")] public Animator animator;
     
     //Component Script for states change
     private EnemyMovement _enemyMovement;
     private RookAttack _rookAttack;
-
+  
+    
     [Header("Transform")] 
     public Transform target;
     public Transform rookMovePoint;
     public Transform rookTransform;
 
     private Vector2 attackDirection;
-    
+    private static readonly int IsAttacking = Animator.StringToHash("IsAttacking");
+
     // Start is called before the first frame update
     private void Start()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _rookAttack = GetComponent<RookAttack>();
+       
         state = 1;
     }
 
@@ -42,6 +50,7 @@ public class RookState : MonoBehaviour
                 break;
             
             case DESTROYED:
+                DestroyedState();
                 break;
         }
     }
@@ -50,8 +59,11 @@ public class RookState : MonoBehaviour
     {
         _enemyMovement.enabled = true;
         _rookAttack.enabled = false;
-
-
+  
+        //Play the animation
+        animator.SetBool("IsAttacking", false);
+        
+        //Check for the player in range (4 directions), if condition met then change stage to ATTACK
         var position = rookTransform.position;
         
         Vector2 rayLeft = (Vector2) position + new Vector2(-0.5f, 0f);
@@ -103,7 +115,29 @@ public class RookState : MonoBehaviour
     {
         _enemyMovement.enabled = false;
         _rookAttack.enabled = true;
+        
+        //Play the animation
+        animator.SetBool("IsAttacking", true);
 
         RookAttack.attackDirection = this.attackDirection;
     }
+
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Explode"))
+        {
+            state = DESTROYED;
+        }
+    }
+    
+    private void DestroyedState()
+    {
+        _enemyMovement.enabled = false;
+        _rookAttack.enabled = false;
+        
+        levelData.DestroyedAnEnemy();
+        Destroy(rook);
+    }
+
 }
