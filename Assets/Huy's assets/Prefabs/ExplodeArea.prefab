@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 4747166901362483078}
-  animationTime: 1
+  animationTime: 0.5
   damage: 1
 --- !u!58 &3744997384625637331
 CircleCollider2D:
