@@ -8,7 +8,7 @@ public class AnimationStates : MonoBehaviour
     [Header("Components")] 
     public Animator animator;
     public SpriteRenderer playerSprite;
-    public new Collider2D collider;
+    public Collider2D collider2d;
 
     [Header("Views")] 
     public PlayerInput playerInput;
@@ -54,7 +54,7 @@ public class AnimationStates : MonoBehaviour
 
     public void Defeated()
     {
-        collider.enabled = false;
+        collider2d.enabled = false;
         animator.SetBool("IsDefeated", true);
         if (playerInput != null)
         {

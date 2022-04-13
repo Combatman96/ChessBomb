@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Pathfinding;
+﻿using Pathfinding;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -29,8 +27,8 @@ public class EnemyMovement : MonoBehaviour
     {
         enemyMovePoint.parent = null;
         seeker = GetComponent<Seeker>();
-        InvokeRepeating(nameof(UpdatePath), 0f, repeatRate: 0.02f);
-
+        //InvokeRepeating(nameof(UpdatePath), 0f, 1f);
+        UpdatePath();
     }
     
     
@@ -48,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
         if (!p.error)
         {
             path = p; // assign current path if there is no error
-            currentWaypoint = 0;
+            currentWaypoint = 1;
         }
     }
 
@@ -81,13 +79,17 @@ public class EnemyMovement : MonoBehaviour
     private void Move()
     {
         var direction =  path.vectorPath[currentWaypoint];
+        enemyMovePoint.position = direction;
         enemy.position = Vector3.MoveTowards(enemy.position, enemyMovePoint.position, moveSpeed * Time.deltaTime);
         //rb.MovePosition((Vector2)enemyMovePoint.position * Time.deltaTime);
-        if ((Vector2)enemyMovePoint.position == (Vector2)enemy.position)
+        if ((Vector2)direction == (Vector2)enemy.position)
         {
             enemyMovePoint.position =  direction;
             AstarPath.active.Scan();
+            
             currentWaypoint++;
+            UpdatePath();
+            //Debug.Log("Arrived");
         }
     }
 }
