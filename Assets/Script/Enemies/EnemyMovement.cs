@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
     }
     
     
-    private void UpdatePath()
+    public void UpdatePath()
     {
         //Generating path
         if (seeker.IsDone())

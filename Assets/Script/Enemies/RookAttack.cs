@@ -25,6 +25,7 @@ public class RookAttack : MonoBehaviour
         if (Vector2.Distance(rookTransform.position, rookMovePoint.position) == 0)
         {
             RookState.state = 1;
+            GetComponent<EnemyMovement>().UpdatePath();
         }
     }
 }
