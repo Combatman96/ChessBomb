@@ -372,7 +372,7 @@ MonoBehaviour:
   playerTransform: {fileID: 1296207132316635956}
   whatStopMovement:
     serializedVersion: 2
-    m_Bits: 401152
+    m_Bits: 393472
 --- !u!114 &1296207131218716827
 MonoBehaviour:
   m_ObjectHideFlags: 0
