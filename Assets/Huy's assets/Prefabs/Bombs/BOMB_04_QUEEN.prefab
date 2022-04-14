@@ -49,7 +49,7 @@ MonoBehaviour:
   explodeModel: {fileID: 4747166901362483078, guid: 5b2fdb49995834748bb6f651410049bd,
     type: 3}
   bombId: 4
-  timeCountdown: 3.69
+  timeCountdown: 1.9
   damage: 1
   timeIsRunning: 0
 --- !u!58 &6163153897710113814
@@ -114,6 +114,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
